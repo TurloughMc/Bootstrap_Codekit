@@ -1,0 +1,108 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+// Global values
+// --------------------------------------------------
+
+/* http://colorschemedesigner.com/ */
+/*Primary (1,4,5), - Header
+Complementary (1), - Link */
+
+@primary1:        #AC0501;
+@primary4:        #D63A36;
+@primary5:        #D66461;
+@complementary1:    #01870A;
+
+#st2, #st3, #st4 {
+  display: none;
+}
+
+header h2 {
+  background: @primary1;
+  color: #FFF;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Colors */
+#square-one {
+  background: @primary1;
+}
+
+#square-two {
+  background: @primary4;
+}
+
+#square-three {
+  background: @primary5;
+}
+
+#square-four {
+  background: @complementary1;
+}
+
+
+
+/* Textures */
+#texture-one {
+  background-image: url(http://farm4.staticflickr.com/3444/3738069743_c3a22dee34_q.jpg);
+}
+
+
+// Grays
+// -------------------------
+
+@brand-primary:         blue;
+@brand-success:         blue;
+@brand-warning:         blue;
+@brand-danger:          blue;
+@brand-info:            blue;
+
+
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: 40px;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+
+// Button variants
+// -------------------------
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+.button-variant(@color; @background; @border) {
+  color: pink;
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 8%);
+        border-color: darken(@border, 12%);
+  }
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @background;
+          border-color: @border;
+    }
+  }
+}
+
